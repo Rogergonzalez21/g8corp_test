@@ -25,8 +25,15 @@
       <div class="container">
           <div>
             <div class="jumbotron">
-              <h1>G8 Corporation Test</h1>
-              <h3>Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by Roger González</h3>
+              <div class="row">
+                <div class="col-md-8">
+                  <h1>G8 Corporation Test</h1>
+                  <h3>Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by Roger González</h3>
+                </div>
+                <div class="col-md-4">
+                  <center><img src="${request.static_url('g8test:static/img/yo.png')}" width="60%"></center>
+                </div>
+              </div>
             </div>
 
                 <div>

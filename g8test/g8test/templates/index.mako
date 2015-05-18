@@ -22,7 +22,7 @@
           <td>${person.id}</td>
           <td>${person.name}</td>
           <td>${person.last_name}</td>
-          <td>${person.mail}</td>
+          <td><a href="mailto:${person.mail}">${person.mail}</a></td>
           <td>${person.phone}</td>
           <td>${person.address}</td>
         </tr>
