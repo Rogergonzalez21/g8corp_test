@@ -59,8 +59,8 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-            <a href="${request.route_url('index')}" class="btn btn-danger">Volver</a>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="${request.route_url('index')}" class="btn btn-danger">Back</a>
         </div>
     </div>
 

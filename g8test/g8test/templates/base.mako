@@ -52,8 +52,11 @@
   <div class="container">
   <hr/>
     <h3>Made for the "Corporacion G8" test.</h3>
+    <h4>Completely responsive for mobile devices</h4>
     <ul>
+      <li>Github Repo: <a href="https://github.com/Rogergonzalez21/g8corp_test">g8corp_test</a></li>
       <li>Framework: <a href="http://docs.pylonsproject.org/projects/pyramid/en/1.5-branch/">Pyramid 1.5.7</a></li>
+      <li>Forms: <a href="https://wtforms.readthedocs.org/en/latest/">WTForms</a></li>
       <li>Template language: <a href="http://www.makotemplates.org/">Mako</a></li>
       <li>Bootstrap Template: <a href="https://bootswatch.com/darkly/">Darkly</a></li>
     </ul>

@@ -5,6 +5,7 @@
 
     <h2>People list</h2>
 
+<div class="table-responsive">
 <table class="table table-hover">
       <thead>
         <tr>
@@ -29,4 +30,5 @@
         % endfor
       </tbody>
     </table>
+    </div>
 <p><a href="${request.route_url('add_persons')}">Add person</a></p>
