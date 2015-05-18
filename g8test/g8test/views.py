@@ -9,13 +9,17 @@ from .models import (
     )
 
 
-@view_config(route_name='home', renderer='templates/mytemplate.pt')
-def my_view(request):
+@view_config(route_name='home', renderer='templates/index.mako')
+def persons(request):
     try:
-        one = DBSession.query(MyModel).filter(MyModel.name == 'one').first()
+        persons = DBSession.query(Person)
     except DBAPIError:
         return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'one': one, 'project': 'g8test'}
+    return {'persons': persons, 'project': 'g8test'}
+
+@view_config(route_name='add_persons', renderer='templates/add_persons.mako')
+def add_persons(request):
+    return {}
 
 
 conn_err_msg = """\
