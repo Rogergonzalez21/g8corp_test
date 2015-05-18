@@ -1,3 +1,4 @@
+from pyramid.httpexceptions import HTTPFound
 from pyramid.response import Response
 from pyramid.view import view_config
 
@@ -8,18 +9,26 @@ from .models import (
     Person,
     )
 
+from forms import PersonForm
 
-@view_config(route_name='home', renderer='templates/index.mako')
+
+@view_config(route_name='index', renderer='templates/index.mako')
 def persons(request):
     try:
         persons = DBSession.query(Person)
     except DBAPIError:
         return Response(conn_err_msg, content_type='text/plain', status_int=500)
-    return {'persons': persons, 'project': 'g8test'}
+    return {'persons': persons}
 
 @view_config(route_name='add_persons', renderer='templates/add_persons.mako')
 def add_persons(request):
-    return {}
+    person = Person()
+    form = PersonForm(request.POST)
+    if request.method == 'POST' and form.validate():
+        form.populate_obj(person)
+        DBSession.add(person)
+        return HTTPFound(location=request.route_url('index'))
+    return {'form' : form}
 
 
 conn_err_msg = """\
