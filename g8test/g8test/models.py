@@ -2,7 +2,7 @@ from sqlalchemy import (
     Column,
     Index,
     Integer,
-    Text,
+    Unicode
     )
 
 from sqlalchemy.ext.declarative import declarative_base
@@ -18,10 +18,13 @@ DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
 Base = declarative_base()
 
 
-class MyModel(Base):
-    __tablename__ = 'models'
+class Person(Base):
+    __tablename__ = 'Person'
     id = Column(Integer, primary_key=True)
-    name = Column(Text)
-    value = Column(Integer)
+    name = Column(Unicode(255), nullable=False)
+    last_name = Column(Unicode(255), nullable=False)
+    mail = Column(Unicode(255), nullable=False)
+    phone = Column(Unicode(255), nullable=False)
+    address = Column(Unicode(255), nullable=False)
 
-Index('my_index', MyModel.name, unique=True, mysql_length=255)
+Index('my_index', Person.name, unique=True, mysql_length=255)
