@@ -29,4 +29,4 @@
         % endfor
       </tbody>
     </table>
-<p><a href="${request.route_url('add_persons')}">Añadir persona</a></p>
+<p><a href="${request.route_url('add_persons')}">Add person</a></p>
