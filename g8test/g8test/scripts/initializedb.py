@@ -32,7 +32,7 @@ def main(argv=sys.argv):
     options = parse_vars(argv[2:])
     setup_logging(config_uri)
     settings = get_appsettings(config_uri, options=options)
-    engine = create_engine(os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL', ''))
+    engine = create_engine(os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL'))
     DBSession.configure(bind=engine)
     Base.metadata.create_all(engine)
     with transaction.manager:

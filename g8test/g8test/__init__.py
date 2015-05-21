@@ -11,7 +11,7 @@ from .models import (
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
-    engine = create_engine(os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL', ''))
+    engine = create_engine(os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL'))
     DBSession.configure(bind=engine)
     Base.metadata.bind = engine
     config = Configurator(settings=settings)
